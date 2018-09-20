@@ -1,1 +1,1 @@
-# lerna-example
+# lerna-client-server-example

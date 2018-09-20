@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-client-server-example",
+  "name": "lerna-client-server-example",
   "private": true,
   "version": "1.0.0",
   "description": "",
