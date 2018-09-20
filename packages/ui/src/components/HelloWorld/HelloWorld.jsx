@@ -1,24 +1,25 @@
 import React, { PureComponent } from "react";
-import styles from "./HelloWorld.scss";
 
 export default class HelloWorld extends PureComponent {
   state = {
-    name: ""
+    fetching: false,
+    string: ""
   };
-  onChange = event => {
-    this.setState({ name: event.target.value });
-  };
+  async componentDidMount() {
+    this.setState({ fetching: true });
+    const response = await fetch("/api");
+    if (response.ok) {
+      const { string } = await response.json();
+      this.setState({ fetching: false, string });
+    } else {
+      this.setState({ fetching: false });
+    }
+  }
   render() {
-    const { name } = this.state;
     return (
       <div>
-        <h2 className={styles.Title}>Hello, {name}!</h2>
-        <input value={name} onChange={this.onChange} />
+        <h2>{this.state.fetching ? "fetching..." : this.state.string}</h2>
       </div>
     );
   }
 }
-
-HelloWorld.defaultProps = {
-  name: ""
-};

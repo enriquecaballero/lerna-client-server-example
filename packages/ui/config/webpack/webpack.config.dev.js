@@ -10,13 +10,13 @@ const devServer = {
   host: LOCALHOST,
   contentBase: path.resolve(ROOT, "dist"),
   publicPath: "/",
-  stats: { colors: true }
-  // proxy: {
-  //   "/api": {
-  //     target: `http://<HOSTNAME>:<PORT_NUMBER>/`,
-  //     pathRewrite: { "^/api": "" }
-  //   }
-  // }
+  stats: { colors: true },
+  proxy: {
+    "/api": {
+      target: `http://${LOCALHOST}:3030/`,
+      pathRewrite: { "^/api": "" }
+    }
+  }
 };
 
 module.exports = Object.assign({}, webpackConfig, {
