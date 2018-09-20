@@ -6,10 +6,6 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git@dev.visionistinc.com:data_science/HHS.git"
-  },
   "scripts": {
     "start": "yarn lerna run start --stream --parallel",
     "lerna": "lerna",
