@@ -1,11 +1,11 @@
 {
-  "name": "hhs",
+  "name": "monorepo-client-server-example",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "scripts": {
     "start": "yarn lerna run start --stream --parallel",
     "lerna": "lerna",
